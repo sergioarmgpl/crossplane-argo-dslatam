@@ -104,7 +104,15 @@ Create the projects for this demo by running the following command:
 kubectl apply -f projects/
 ```
 
+# Set permissions for Github Actions
+Go to settings/actions in your repository and in Workflow permissions set
+- Read and write permissions
+- Allow GitHub Actions to create and approve pull requests
 
 # Use the workflows
 1. Create a new application
 2. Delete an application
+
+
+# References
+- https://docs.crossplane.io/latest/getting-started/provider-gcp/
