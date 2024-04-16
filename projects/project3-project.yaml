@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project3
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Project3
+  sourceRepos:
+  - 'https://github.com/sergioarmgpl/crossplane-argo-dslatam'
+  destinations:
+  - namespace: development
+    server: https://kubernetes.default.svc
+    name: in-cluster
+  - namespace: argocd
+    server: https://kubernetes.default.svc
+    name: in-cluster
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'

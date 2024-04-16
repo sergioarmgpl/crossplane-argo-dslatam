@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apps-project3
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: development
+    server: https://kubernetes.default.svc
+  project: project3
+  source:
+    path: apps/project3
+    repoURL: https://github.com/sergioarmgpl/crossplane-argo-dslatam
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: true
