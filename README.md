@@ -98,6 +98,13 @@ spec:
 EOF
 ```
 
+# Create the initial Projects and Apps
+Create the projects for this demo by running the following command:
+```
+kubectl apply -f projects/
+```
+
+
 # Use the workflows
 1. Create a new application
 2. Delete an application
